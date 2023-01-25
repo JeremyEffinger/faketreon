@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styling/App.css";
 import axios from "axios";
 import { useState } from "react";
 
