@@ -28,6 +28,5 @@ server.use((err, req, res, next) => {
   console.error(err);
   res.status(500).send("Internal Server Error");
 });
-console.log(sql);
 //start server
 server.listen(PORT, () => console.log(`start listening on port : ${PORT}`));
