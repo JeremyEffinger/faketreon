@@ -1,5 +1,5 @@
 import express, { json } from "express";
-const PORT = 5000;
+const PORT = 6000;
 const server = express();
 
 server.use(express.json());
