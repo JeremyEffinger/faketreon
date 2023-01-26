@@ -1,6 +1,7 @@
 import "./styling/App.css";
 import axios from "axios";
 import { useState } from "react";
+import Banner from "./components/banner/Banner.jsx";
 import Header from "../src/components/Header.jsx"
 
 
@@ -21,6 +22,7 @@ function App() {
     <div>
       < Header/>
     <div className="App">
+    <Banner />
       <button onClick={getDataFromServer}>Access server using proxy</button>
       <p>data : {data.message}</p>
     </div>
