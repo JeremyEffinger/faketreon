@@ -4,6 +4,7 @@ import { useState } from "react";
 import Avatar from "./components/avatar/avatar";
 import Banner from "./components/banner/Banner.jsx";
 import Header from "./components/header/Header.jsx";
+import Membership from "./components/membership/Membership.jsx";
 import AboutMe from "./components/about-me/AboutMe.jsx"
 
 
@@ -25,6 +26,8 @@ function App() {
       <Header />
       <Banner />
       <Avatar></Avatar>
+      <Membership />
+
       <AboutMe />
       <div>
         <button onClick={getDataFromServer}>Access server using proxy</button>
