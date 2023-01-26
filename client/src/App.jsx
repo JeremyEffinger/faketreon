@@ -1,6 +1,8 @@
 import "./styling/App.css";
 import axios from "axios";
 import { useState } from "react";
+import Avatar from "./components/avatar/avatar";
+import dummyPhoto from '../src/components/avatar/dummyPhoto.png'
 
 function App() {
   const [data, setData] = useState("{}");
@@ -16,10 +18,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <button onClick={getDataFromServer}>Access server using proxy</button>
-      <p>data : {data.message}</p>
-    </div>
+        <div className="App">
+          <Avatar></Avatar>
+          <button onClick={getDataFromServer}>Access server using proxy</button>
+          <p>data : {data.message}</p>
+        </div>
   );
 }
 
