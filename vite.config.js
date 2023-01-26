@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/v1": "http://localhost:6000/",
+      "/static": "http://localhost:6000/",
     },
   },
   root: "./client",

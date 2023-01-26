@@ -1,13 +1,11 @@
-import React from 'react'
-import dummyPhoto from '../../assets/avatar/dummyPhoto.png'
+import React from "react";
 
-
-const Avatar = () => {
+const Avatar = (props) => {
   return (
     <div>
-      <img className='photo' src={dummyPhoto} />
+      <img className="photo" src={"static/images/avatars/dummyPhoto.png"} />
     </div>
-  )
-}
+  );
+};
 
-export default Avatar
+export default Avatar;
