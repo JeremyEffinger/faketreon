@@ -1,7 +1,7 @@
  import React from "react";
  //import recoil from "recoil";
 
- function Header(){
+ function Header(props){
 
     // this can be run with onChange with set timeout
     // or onBlur

@@ -5,6 +5,8 @@ import Avatar from "./components/avatar/avatar";
 import Banner from "./components/banner/Banner.jsx";
 import Header from "./components/header/Header.jsx";
 import Membership from "./components/membership/Membership.jsx";
+import AboutMe from "./components/about-me/AboutMe.jsx"
+
 
 function App() {
   const [data, setData] = useState("{}");
@@ -25,6 +27,8 @@ function App() {
       <Banner />
       <Avatar></Avatar>
       <Membership />
+
+      <AboutMe />
       <div>
         <button onClick={getDataFromServer}>Access server using proxy</button>
         <p>data : {data.message}</p>

@@ -1,0 +1,18 @@
+ .images {
+    display: flex;
+ }
+
+ .pix {
+    flex: 1
+ }
+
+ .firstLine {
+    display: flex;
+ }
+ .line{
+    flex: 1;
+ }
+
+ .container{
+    color: red;
+ }
