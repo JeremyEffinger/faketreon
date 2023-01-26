@@ -7,7 +7,7 @@ const server = express();
 
 //start middleware
 server.use(express.json());
-
+server.use("/static", express.static("server/public"));
 //api routes
 server.get("/api/v1", (req, res) => {
   res.json({ message: "Hello!" });
