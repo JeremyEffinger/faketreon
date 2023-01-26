@@ -5,6 +5,7 @@ import Avatar from "./components/avatar/avatar";
 import Banner from "./components/banner/Banner.jsx";
 import Header from "./components/header/Header.jsx";
 import AboutMe from "./components/about-me/AboutMe.jsx"
+import Footer from "./components/Footer/footer";
 
 
 function App() {
@@ -24,12 +25,13 @@ function App() {
     <div className="App">
       <Header />
       <Banner />
-      <Avatar></Avatar>
+      <Avatar />
       <AboutMe />
       <div>
         <button onClick={getDataFromServer}>Access server using proxy</button>
         <p>data : {data.message}</p>
       </div>
+      <Footer />
     </div>
   );
 }
