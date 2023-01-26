@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RecoilRoot } from "recoil";
 import App from "./App";
 import {
   RecoilRoot,
@@ -10,7 +9,6 @@ import {
   useRecoilValue,
 } from 'recoil';
 import "./styling/index.css";
-import {RecoilRoot} from "recoil";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
