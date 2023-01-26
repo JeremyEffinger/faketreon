@@ -1,7 +1,7 @@
 import React from "react";
 import "./aboutMe.css";
 
-function AboutMe(){
+function AboutMe(props){
 
     return(
         <div className="container">
