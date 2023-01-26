@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import Avatar from "./components/avatar/avatar";
 import Banner from "./components/banner/Banner.jsx";
-import Header from "./components/header/Header.jsx"
+import Header from "./components/header/Header.jsx";
 
 function App() {
   const [data, setData] = useState("{}");
@@ -19,14 +19,14 @@ function App() {
   }
 
   return (
-  <div>
-    < Header/>
-    < Banner />
-    < Avatar></Avatar>
     <div className="App">
-      <button onClick={getDataFromServer}>Access server using proxy</button>
-      <p>data : {data.message}</p>
-    </div>
+      <Header />
+      <Banner />
+      <Avatar></Avatar>
+      <div>
+        <button onClick={getDataFromServer}>Access server using proxy</button>
+        <p>data : {data.message}</p>
+      </div>
     </div>
   );
 }
