@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import Avatar from "./components/avatar/avatar";
 import dummyPhoto from '../src/components/avatar/dummyPhoto.png'
+import Banner from "./components/banner/Banner.jsx";
+import Header from "../src/components/Header.jsx"
 
 function App() {
   const [data, setData] = useState("{}");
@@ -18,11 +20,15 @@ function App() {
   }
 
   return (
-        <div className="App">
-          <Avatar></Avatar>
-          <button onClick={getDataFromServer}>Access server using proxy</button>
-          <p>data : {data.message}</p>
-        </div>
+  <div>
+    < Header/>
+    < Banner />
+    < Avatar></Avatar>
+    <div className="App">
+      <button onClick={getDataFromServer}>Access server using proxy</button>
+      <p>data : {data.message}</p>
+    </div>
+    </div>
   );
 }
 
