@@ -1,5 +1,6 @@
 import React from 'react'
-import dummyPhoto from '../avatar/dummyPhoto.png'
+import dummyPhoto from '../../assets/avatar/dummyPhoto.png'
+
 
 const Avatar = () => {
   return (
