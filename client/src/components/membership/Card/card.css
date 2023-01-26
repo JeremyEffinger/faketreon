@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+-webkit-box-flex: 1;
+flex-grow: 1;
+transition-duration: 300ms;
+transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+transition-delay: 0s;
+transition-property: all;
+padding-top: 0rem;
+padding-right: 0rem;
+padding-bottom: 0rem;
+padding-left: 0rem;
+margin-top: 0rem;
+margin-right: 0rem;
+margin-bottom: 0rem;
+margin-left: 0rem;
+}
+
+body {
+  font-size: Oxygen, sans-serif;
+  margin: 2rem;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(12rem,16rem));
+  gap: 2rem;
+  justify-content: center;
+}
+
+ .card {
+   overflow: hidden;
+   box-shadow: hidden; 
+  border-radius: 0.2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   cursor: pointer;
+   transition-duration: 200ms ease-in;
+
+  }
+
+ .card__image {
+  height: 12rem;
+  width: 140%;
+  object-fit: cover;
+}
+
+.card__title {
+  padding: 1rem;
+}
+
+.card__description {
+  padding: 0 1rem;
+}
+
+.card__btn {
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid orange;
+  background: transparent;
+  background-color: orange;
+ transition:background 200ms ease-in, color 200ms ease-in;;
+}
+
+.card__hover{
+  transform: scale(1.02);
+}
