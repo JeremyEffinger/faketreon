@@ -24,6 +24,8 @@ server.put("/api/v1/creators/:id", (req, res, next) => {});
 server.delete("/api/v1/creators/:id", (req, res, next) => {});
 
 // Campaigns routes continued
+server.get("/api/v1/campaigns", (req, res, next) => {});
+server.get("/api/v1/campaigns/:id", (req, res, next) => {});
 server.post("/api/v1/campaigns", (req, res, next) => {});
 server.put("/api/v1/campaigns/:id", (req, res, next) => {});
 server.delete("/api/v1/campaigns/:id", (req, res, next) => {});

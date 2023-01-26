@@ -38,4 +38,22 @@ const postCreateUser = (req, res, next) => {
   }
 };
 
-export { getAllUsers, getUserById, postCreateUser };
+const patchUser = (req, res, next) => {
+  const { id } = req.params;
+  sql`UPDATE users SET ${sql(req.body)} WHERE id=${id} RETURNING *`.then(
+    (user) => {
+      console.log(user.statement.string);
+      res.send(user[0]);
+    }
+  );
+};
+
+const deleteUser = (req, res, next) => {
+  const { id } = req.params;
+  sql` DELETE FROM users WHERE id=${id}`.then((user) => {
+    console.log(user.statement.string);
+    res.send(user[0]);
+  });
+};
+
+export { getAllUsers, getUserById, postCreateUser, patchUser, deleteUser };
