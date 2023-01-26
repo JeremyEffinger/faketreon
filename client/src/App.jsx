@@ -4,6 +4,7 @@ import { useState } from "react";
 import Avatar from "./components/avatar/avatar";
 import Banner from "./components/banner/Banner.jsx";
 import Header from "./components/header/Header.jsx";
+import Membership from "./components/membership/Membership.jsx";
 
 function App() {
   const [data, setData] = useState("{}");
@@ -23,6 +24,7 @@ function App() {
       <Header />
       <Banner />
       <Avatar></Avatar>
+      <Membership />
       <div>
         <button onClick={getDataFromServer}>Access server using proxy</button>
         <p>data : {data.message}</p>
