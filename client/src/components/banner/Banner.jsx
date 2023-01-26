@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Banner = () => {
+const Banner = (props) => {
   return (
     <div className="banner">
       <h1>Welcome to My App</h1>
