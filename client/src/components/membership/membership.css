@@ -1,0 +1,26 @@
+.member__btn {
+  display: inline-flex;
+-webkit-box-pack: center;
+justify-content: center;
+-webkit-box-align: center;
+align-items: center;
+position: relative;
+box-sizing: border-box;
+min-height: 44px;
+max-height: 44px;
+padding-top: 0px;
+padding-right: 20px;
+width: 18%;
+white-space: unset;
+transition-duration: 300ms;
+transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+transition-delay: 0s;
+transition-property: all;
+text-align: center;
+color: darkgoldenrod;
+background-color: antiquewhite;
+
+margin-right: 1rem;
+margin-top: 1rem;
+
+}
