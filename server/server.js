@@ -1,6 +1,7 @@
 import express from "express";
 import userRoutes from "./routes/usersRoutes.js";
 import creatorRoutes from "./routes/creatorRoutes.js";
+import campaignRoutes from "./routes/campaignRoutes.js";
 
 //setup server
 const PORT = 6000;
@@ -20,12 +21,8 @@ server.use("/api/v1/users", userRoutes);
 // Creators routes
 server.use("/api/v1/creators", creatorRoutes);
 
-// Campaigns routes continued
-server.get("/api/v1/campaigns", (req, res, next) => {});
-server.get("/api/v1/campaigns/:id", (req, res, next) => {});
-server.post("/api/v1/campaigns", (req, res, next) => {});
-server.put("/api/v1/campaigns/:id", (req, res, next) => {});
-server.delete("/api/v1/campaigns/:id", (req, res, next) => {});
+// Campaign routes
+server.use("/api/v1/campaigns", campaignRoutes);
 
 // Subscriptions routes
 server.get("/api/v1/subscriptions", (req, res, next) => {});
