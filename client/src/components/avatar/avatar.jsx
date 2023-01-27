@@ -1,9 +1,10 @@
 import React from "react";
+import style from "../avatar/avatar.module.scss"
 
 const Avatar = (props) => {
   return (
-    <div>
-      <img className="photo" src={"static/images/avatars/dummyPhoto.png"} />
+    <div className={style.avatar}>
+      <img className={style.photo} src={"static/images/avatars/dummyPhoto.png"} />
     </div>
   );
 };
