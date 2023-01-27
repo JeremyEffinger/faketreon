@@ -79,6 +79,7 @@ const deleteCreator = (req, res, next) => {
     })
     .catch(next);
 };
+
 export {
   getAllCreators,
   getCreatorById,
