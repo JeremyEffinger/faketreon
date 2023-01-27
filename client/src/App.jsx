@@ -27,7 +27,6 @@ function App() {
       <Header />
       <Banner />
       <Avatar />
-      <Avatar></Avatar>
       <Membership />
       <AboutMe />
       <div>
