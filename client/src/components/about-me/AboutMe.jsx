@@ -7,10 +7,12 @@ import "./aboutMe.css";
 function AboutMe(props){
 
     return(
-        <div className="container">
-            <About/>
-            <Goals/>
-            <PatronBoons/>
+        <div className="container1">
+            <div className="container">
+                <About/>
+                <Goals/>
+                <PatronBoons/>
+            </div>
         </div>
     )
 }

@@ -4,7 +4,7 @@ function PatronBoons(){
 
     return (
         <div>
-            <div className="patronBoons">
+            <div className="patron-boons">
                     <h4>
                         become a patron
                     </h4>

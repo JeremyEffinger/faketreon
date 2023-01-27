@@ -1,4 +1,5 @@
  import React from "react";
+ import "./header.css";
  //import recoil from "recoil";
 
  function Header(props){
@@ -14,13 +15,15 @@
     }
 
  return (
-    <header>
-    <a rel="stylesheet" href="https://www.google.com" >link1</a>
-    <input onBlur={handleBlur}type="text"/>
-    <button  type="submit">BUTTONS</button>
-    <a rel="stylesheet" href="https://www.google.com" >link2</a>   
-    <a rel="stylesheet" href="https://www.google.com" >link3</a>
-    </header>
+   <div className="container">
+      <header className="header">
+         <a rel="stylesheet" href="https://www.google.com" >link1</a>
+         <input onBlur={handleBlur}type="text"/>
+         <button  type="submit">BUTTONS</button>
+         <a rel="stylesheet" href="https://www.google.com" >link2</a>   
+         <a rel="stylesheet" href="https://www.google.com" >link3</a>
+      </header>
+    </div>
     )
  }
 
