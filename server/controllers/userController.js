@@ -26,7 +26,7 @@ const getUserById = (req, res, next) => {
 const postCreateUser = (req, res, next) => {
   const requiredKeys = ["email", "password", "name"];
   if (requiredKeys.every((key) => req.body.hasOwnProperty(key))) {
-    sql`INSERT INTO users (email, name, password) VALUES (${req.body.email},${req.body.password},${req.body.name}) RETURNING *;`
+    sql`INSERT INTO users (email, password, name) VALUES (${req.body.email},${req.body.password},${req.body.name}) RETURNING *;`
       .then((user) => {
         res.status(201);
         res.json(user[0]);

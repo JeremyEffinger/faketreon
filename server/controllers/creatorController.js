@@ -23,19 +23,40 @@ const getCreatorById = (req, res, next) => {
     .catch(next);
 };
 
-//to do refine this.
-const postCreateCreator = (req, res, next) => {
-  const requiredKeys = ["user_id", "name"];
-  if (requiredKeys.every((key) => req.body.hasOwnProperty(key))) {
-    sql`INSERT INTO creators (user_id, name) VALUES (${req.body.user_id},${req.body.name}) RETURNING *;`
-      .then((creator) => {
-        res.status(201);
-        res.json(creator[0]);
-      })
-      .catch(next);
-  } else {
-    res.status(400).send("Bad Request");
-    console.log(req.body);
+//This code had to be written using async and await. Promise chaining was too difficult to do.
+const postCreateCreator = async (req, res, next) => {
+  const { user_id, name, bio = null } = req.body;
+
+  //user check function takes two parameters a user ID and a table name.
+  //returns a count of how many times it appears in the given table.
+  const userCheck = async (user_id, tableName) => {
+    const result = await sql`SELECT COUNT(*) FROM ${sql(
+      tableName
+    )} WHERE id = ${user_id}`;
+    return parseInt(result[0].count);
+  };
+
+  try {
+    //if 0 returns from calling userCheck on table "users" the user does not exist return 404
+    const userExists = await userCheck(user_id, "users");
+    if (userExists === 0) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    //if calling userCheck on table "creators" returns anything but 0, then the creator already exists. return 409.
+    const creatorExists = await userCheck(user_id, "creators");
+    if (creatorExists !== 0) {
+      return res.status(409).json({ message: "Creator already exists" });
+    }
+
+    //creator new Creator in creattaors table and return it with status 201
+    const newCreator =
+      await sql`INSERT INTO creators (user_id, name, bio) VALUES (${user_id}, ${name}, ${bio})RETURNING *`;
+    res.status(201);
+    res.json(newCreator[0]);
+  } catch (error) {
+    console.log(error);
+    next();
   }
 };
 
