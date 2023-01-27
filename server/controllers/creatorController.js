@@ -60,4 +60,29 @@ const postCreateCreator = async (req, res, next) => {
   }
 };
 
-export { getAllCreators, getCreatorById, postCreateCreator };
+const patchCreator = (req, res, next) => {
+  const { id } = req.params;
+  sql`UPDATE creators SET ${sql(req.body)} WHERE id=${id} RETURNING *`
+    .then((creator) => {
+      console.log(creator.statement.string);
+      res.send(creator[0]);
+    })
+    .catch(next);
+};
+
+const deleteCreator = (req, res, next) => {
+  const { id } = req.params;
+  sql` DELETE FROM creators WHERE id=${id}`
+    .then((creator) => {
+      console.log(creator.statement.string);
+      res.send(creator[0]);
+    })
+    .catch(next);
+};
+export {
+  getAllCreators,
+  getCreatorById,
+  postCreateCreator,
+  patchCreator,
+  deleteCreator,
+};

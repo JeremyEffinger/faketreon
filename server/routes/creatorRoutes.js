@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", creatorController.getAllCreators);
 router.get("/:id", creatorController.getCreatorById);
 router.post("/", creatorController.postCreateCreator);
-// router.patch("/:id", creatorController.patchCreator);
-// router.delete("/:id", creatorController.deleteCreator);
+router.patch("/:id", creatorController.patchCreator);
+router.delete("/:id", creatorController.deleteCreator);
 
 export default router; //export routes
