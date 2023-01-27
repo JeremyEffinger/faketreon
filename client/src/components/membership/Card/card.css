@@ -43,7 +43,7 @@ body {
   }
 
  .card__image {
-  height: 12rem;
+  height: 8rem;
   width: 140%;
   object-fit: cover;
 }
