@@ -61,10 +61,30 @@ const postCreateCampaign = async (req, res, next) => {
   }
 };
 
+const patchCampaign = (req, res, next) => {
+  const { id } = req.params;
+  sql`UPDATE campaigns SET ${sql(req.body)} WHERE id=${id} RETURNING *`
+    .then((campaign) => {
+      console.log(campaign.statement.string);
+      res.send(campaign[0]);
+    })
+    .catch(next);
+};
+
+const deleteCampaign = (req, res, next) => {
+  const { id } = req.params;
+  sql` DELETE FROM campaigns WHERE id=${id}`
+    .then((campaign) => {
+      console.log(campaign.statement.string);
+      res.send(campaign[0]);
+    })
+    .catch(next);
+};
+
 export {
   getAllCampaigns,
   getCampaignById,
   postCreateCampaign,
-  // patchCampaign,
-  // deleteCampaign,
+  patchCampaign,
+  deleteCampaign,
 };
