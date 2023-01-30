@@ -1,7 +1,6 @@
 import { sql } from "./dbController.js"; //import database configs from dbController
 
 const getAllBlogPosts = (req, res, next) => {
-  console.log("in function");
   sql`SELECT * FROM posts`
     .then((posts) => {
       console.log("posts", posts);

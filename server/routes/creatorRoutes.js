@@ -8,5 +8,6 @@ router.get("/:id", creatorController.getCreatorById);
 router.post("/", creatorController.postCreateCreator);
 router.patch("/:id", creatorController.patchCreator);
 router.delete("/:id", creatorController.deleteCreator);
+router.get("/userName/:username", creatorController.getDataByUsername);
 
 export default router; //export routes
