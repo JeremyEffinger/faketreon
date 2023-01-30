@@ -1,4 +1,6 @@
 import React from "react";
+import Card from './Card2/Card2.jsx'
+
 
 function RecentPosts(){
 
@@ -13,9 +15,18 @@ function RecentPosts(){
         
         Maecenas ac lectus magna. Proin augue tellus, condimentum non feugiat porta, facilisis at ipsum. Duis tristique fermentum aliquam. Aenean egestas nisi vitae mollis scelerisque. Nunc eu facilisis nunc. Sed quam nibh, rutrum quis ante et, tempus congue est. Quisque laoreet magna sit amet venenatis gravida. Proin posuere velit sit amet ullamcorper feugiat. Vestibulum sed felis ac lorem auctor porttitor sit amet et felis. Etiam dictum elementum augue eget tincidunt. Cras sed ex quis nisi vestibulum commodo. Nunc aliquet et est non sagittis. Duis egestas nulla nulla, in fermentum risus pellentesque eu. Cras bibendum, nisl et sollicitudin semper, sapien sapien fringilla nulla, in molestie sem erat at elit. Sed auctor augue auctor massa venenatis pulvinar. Sed diam dui, finibus sit amet malesuada ac, varius ut dolor.
         
-        Vivamus dignissim facilisis lectus non tincidunt. Praesent feugiat rhoncus eros, ut tincidunt sem aliquam pretium. Praesent odio nisi, lobortis eu tincidunt quis, pellentesque quis metus. Nulla porta efficitur nisi ut placerat. Aenean nec dolor quis lectus mollis egestas eu et sapien. Nam maximus sapien eu porttitor iaculis. Suspendisse malesuada purus in nisl dictum, et sagittis ex fermentum. Curabitur hendrerit leo nunc, vitae sodales libero condimentum a. Pellentesque mattis efficitur nunc non gravida. Donec quis sapien malesuada, scelerisque magna nec, pharetra ligula.
+        Vivamus dignissim facilisis lectus non tincidunt. Praesent
+         feugiat rhoncus eros, ut tincidunt sem aliquam pretium. Praesent odio nisi, lobortis eu tincidunt quis, pellentesque quis metus. Nulla porta efficitur nisi ut placerat. Aenean nec dolor quis lectus mollis egestas eu et sapien. Nam maximus sapien eu porttitor iaculis. Suspendisse malesuada purus in nisl dictum, et sagittis ex fermentum. Curabitur hendrerit leo nunc, vitae sodales libero condimentum a. Pellentesque mattis efficitur nunc non gravida. Donec quis sapien malesuada, scelerisque magna nec, pharetra ligula.
+
+   <Card />
+   <Card />
+   <Card />
+
         </div>
+      
+        
     )
 }
+
 
 export default RecentPosts
