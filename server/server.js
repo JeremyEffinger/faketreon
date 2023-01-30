@@ -2,6 +2,7 @@ import express from "express";
 import userRoutes from "./routes/usersRoutes.js";
 import creatorRoutes from "./routes/creatorRoutes.js";
 import campaignRoutes from "./routes/campaignRoutes.js";
+import blogRoutes from "./routes/blogRoutes.js";
 
 //setup server
 const PORT = 6000;
@@ -24,6 +25,9 @@ server.use("/api/v1/creators", creatorRoutes);
 // Campaign routes
 server.use("/api/v1/campaigns", campaignRoutes);
 
+// Blog routes
+server.use("/api/v1/blogs", blogRoutes);
+
 // Subscriptions routes
 server.get("/api/v1/subscriptions", (req, res, next) => {});
 server.get("/api/v1/subscriptions/:id", (req, res, next) => {});
@@ -37,13 +41,6 @@ server.get("/api/v1/supporters/:id", (req, res, next) => {});
 server.post("/api/v1/supporters", (req, res, next) => {});
 server.put("/api/v1/supporters/:id", (req, res, next) => {});
 server.delete("/api/v1/supporters/:id", (req, res, next) => {});
-
-// Blog routes
-server.get("/api/v1/blogs", (req, res, next) => {});
-server.get("/api/v1/blogs/:id", (req, res, next) => {});
-server.post("/api/v1/blogs", (req, res, next) => {});
-server.put("/api/v1/blogs/:id", (req, res, next) => {});
-server.delete("/api/v1/blogs/:id", (req, res, next) => {});
 
 //fail over routes
 server.use((req, res, next) => {
