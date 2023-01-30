@@ -4,7 +4,7 @@ import * as blogController from "../controllers/blogController.js"; //import met
 const router = express.Router();
 
 router.get("/", blogController.getAllBlogPosts);
-router.get("/:id", blogController.getBlogPostId);
+router.get("/:id", blogController.getBlogPostById);
 router.get("/creator/:id", blogController.getBlogPostsByCreatorID);
 router.post("/", blogController.postBlogPost);
 router.patch("/:id", blogController.patchBlogPost);

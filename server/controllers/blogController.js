@@ -1,6 +1,7 @@
 import { sql } from "./dbController.js"; //import database configs from dbController
 
 const getAllBlogPosts = (req, res, next) => {
+  console.log("in function");
   sql`SELECT * FROM posts`
     .then((posts) => {
       console.log("posts", posts);
@@ -24,7 +25,7 @@ const getBlogPostById = (req, res, next) => {
 };
 
 const getBlogPostsByCreatorID = async (req, res, next) => {
-  const { creator_id } = req.params;
+  const creator_id = req.params.id;
 
   // check if the creator exists
   const creatorCheck = async (creator_id) => {
@@ -47,6 +48,7 @@ const getBlogPostsByCreatorID = async (req, res, next) => {
       `;
     res.json(posts);
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };
