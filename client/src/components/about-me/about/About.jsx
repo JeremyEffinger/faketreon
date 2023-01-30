@@ -1,17 +1,17 @@
 import React from "react";
+import CreatorState from "../../../CreatorState";
+import {useRecoilValue} from "recoil"
 
 function About(){
-
+    const text = useRecoilValue(CreatorState)
     return (
         <div>
             <div className="about">
                     <h4>
-                    This will be the title of the about me
+                    {text.campaigns[0].title}
                     </h4>
                     <p className="about-section">
-                    This is the context of the about me section. For right now this will be dummytext. 
-                    But eventually this will be an editable string in the psql database that an authenticated
-                    user for this faketreon page
+                    {text.campaigns[0].description}
                     </p>
                 </div>
         </div>

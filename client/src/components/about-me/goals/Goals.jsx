@@ -1,6 +1,9 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
+import CreatorState from "../../../CreatorState";
 
 function Goals(){
+    let text = useRecoilValue(CreatorState)
 
     return (
         <div>
