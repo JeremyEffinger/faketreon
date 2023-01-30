@@ -3,6 +3,7 @@ import userRoutes from "./routes/usersRoutes.js";
 import creatorRoutes from "./routes/creatorRoutes.js";
 import campaignRoutes from "./routes/campaignRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
+import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 
 //setup server
 const PORT = 6000;
@@ -29,11 +30,7 @@ server.use("/api/v1/campaigns", campaignRoutes);
 server.use("/api/v1/blogs", blogRoutes);
 
 // Subscriptions routes
-server.get("/api/v1/subscriptions", (req, res, next) => {});
-server.get("/api/v1/subscriptions/:id", (req, res, next) => {});
-server.post("/api/v1/subscriptions", (req, res, next) => {});
-server.put("/api/v1/subscriptions/:id", (req, res, next) => {});
-server.delete("/api/v1/subscriptions/:id", (req, res, next) => {});
+server.use("/api/v1/subscriptions", subscriptionRoutes);
 
 // Supporters routes
 server.get("/api/v1/supporters", (req, res, next) => {});
