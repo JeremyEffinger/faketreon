@@ -47,6 +47,7 @@ CREATE TABLE subscriptions (
     level INTEGER NOT NULL,
     rewards TEXT,
     amount INTEGER NOT NULL,
+    art VARCHAR(255),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -85,10 +86,10 @@ INSERT INTO campaigns (creator_id, title, description, banner) VALUES (1, 'Campa
 INSERT INTO campaigns (creator_id, title, description, banner) VALUES (2, 'Campaign Two', 'Description of campaign two', 'https://example.com/campaign_2_banner.jpg');
 
 -- migration_10_insert_dummy_data_subscriptions.psql
-INSERT INTO subscriptions (campaign_id, level, rewards, amount) VALUES (1, 1, 'Reward for level 1', 10);
-INSERT INTO subscriptions (campaign_id, level, rewards, amount) VALUES (1, 2, 'Reward for level 2', 20);
-INSERT INTO subscriptions (campaign_id, level, rewards, amount) VALUES (2, 1, 'Reward for level 1', 15);
-INSERT INTO subscriptions (campaign_id, level, rewards, amount) VALUES (2, 2, 'Reward for level 2', 25);
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (1, 1, 'Reward for level 1', 10, 'static/images/membership-img/lvl1.webp');
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (1, 2, 'Reward for level 2', 20, 'static/images/membership-img/lvl2.webp');
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (2, 1, 'Reward for level 1', 15, 'static/images/membership-img/lvl1.webp');
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (2, 2, 'Reward for level 2', 25, 'static/images/membership-img/lvl2.webp');
 
 -- migration_11_insert_dummy_data_supporters.psql
 INSERT INTO supporters (user_id, campaign_id, subscription_id, amount) VALUES (1, 1, 1, 10);

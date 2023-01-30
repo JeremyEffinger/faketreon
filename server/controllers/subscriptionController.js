@@ -26,7 +26,7 @@ const getSubscriptionById = (req, res, next) => {
 const getSubscriptionsByCampaignId = async (req, res, next) => {
   const campaign_id = req.params.id;
 
-  // check if the creator exists
+  // check if the campaign exists
   const campaignCheck = async (campaign_id) => {
     const result =
       await sql`SELECT COUNT(*) FROM campaigns WHERE id = ${campaign_id}`;
@@ -41,19 +41,20 @@ const getSubscriptionsByCampaignId = async (req, res, next) => {
 
     // get all subscriptions made by the campaign_id
     const subscriptions = await sql`
-    SELECT * FROM subscriptions
-    JOIN campaigns ON subscriptions.campaign_id = campaigns.id
-    WHERE subscriptions.campaign_id = ${campaign_id}
-`;
+        SELECT subscriptions.*, subscriptions.art
+        FROM subscriptions
+        JOIN campaigns ON subscriptions.campaign_id = campaigns.id
+        WHERE subscriptions.campaign_id = ${campaign_id}
+      `;
     res.json(subscriptions);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     next(error);
   }
 };
 
 const postSubscriptionLevel = async (req, res, next) => {
-  const { level, campaign_id, amount, rewards } = req.body;
+  const { level, campaign_id, amount, rewards, art = null } = req.body;
 
   // check if the campaign exists
   const campaignCheck = async (campaign_id) => {
@@ -86,8 +87,8 @@ const postSubscriptionLevel = async (req, res, next) => {
 
     // insert the new subscription level into the subscriptions table
     await sql`
-        INSERT INTO subscriptions (level, campaign_id, amount, rewards)
-        VALUES (${level}, ${campaign_id}, ${amount}, ${rewards}) RETURNING *
+        INSERT INTO subscriptions (level, campaign_id, amount, rewards, art)
+        VALUES (${level}, ${campaign_id}, ${amount}, ${rewards}, ${art}) RETURNING *
       `;
 
     res.status(201).json({ message: "subscription level created" });
