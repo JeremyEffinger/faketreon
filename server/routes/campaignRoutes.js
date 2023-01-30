@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", campaignController.getAllCampaigns);
 router.get("/:id", campaignController.getCampaignById);
 router.post("/", campaignController.postCreateCampaign);
-// router.patch("/:id", campaignController.patchCampaign);
-// router.delete("/:id", campaignController.deleteCampaign);
+router.patch("/:id", campaignController.patchCampaign);
+router.delete("/:id", campaignController.deleteCampaign);
 
 export default router; //export routes
