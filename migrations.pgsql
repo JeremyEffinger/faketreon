@@ -45,7 +45,7 @@ CREATE TABLE subscriptions (
     id SERIAL PRIMARY KEY,
     campaign_id INTEGER REFERENCES campaigns(id) NOT NULL,
     level INTEGER NOT NULL,
-    rewards TEXT,
+    rewards TEXT[],
     amount INTEGER NOT NULL,
     art VARCHAR(255),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
@@ -74,22 +74,22 @@ CREATE TABLE posts (
 );
 
 -- migration_7_insert_dummy_data_users.psql
-INSERT INTO users (email, password, name) VALUES ('user1@example.com', 'password', 'UserOne');
-INSERT INTO users (email, password, name) VALUES ('user2@example.com', 'password', 'UserTwo');
+INSERT INTO users (email, password, name) VALUES ('koboldpress@example.com', 'password', 'koboldpress');
+INSERT INTO users (email, password, name) VALUES ('trashtaste@example.com', 'password', 'trashtaste');
 
 -- migration_8_insert_dummy_data_creators.psql
-INSERT INTO creators (user_id, name, bio) VALUES (1, 'Creator One', 'Bio of creator one');
-INSERT INTO creators (user_id, name, bio) VALUES (2, 'Creator Two', 'Bio of creator two');
+INSERT INTO creators (user_id, name, bio) VALUES (1, 'Kobold Press', 'Bio of creator one');
+INSERT INTO creators (user_id, name, bio) VALUES (2, 'Trash Taste', 'Bio of creator two');
 
 -- migration_9_insert_dummy_data_campaigns.psql
-INSERT INTO campaigns (creator_id, title, description, banner) VALUES (1, 'Campaign One', 'Description of campaign one', 'https://example.com/campaign_1_banner.jpg');
-INSERT INTO campaigns (creator_id, title, description, banner) VALUES (2, 'Campaign Two', 'Description of campaign two', 'https://example.com/campaign_2_banner.jpg');
+INSERT INTO campaigns (creator_id, title, description, banner) VALUES (1, 'Warlock', 'creating the darkly fantastical 5th Edition Warlock booklets', 'static/images/banners/dummybanner1.webp');
+INSERT INTO campaigns (creator_id, title, description, banner) VALUES (2, 'Trash Taste Podcast', 'Creating podcasts and videos', 'static/images/banners/dummybanner2.webp');
 
 -- migration_10_insert_dummy_data_subscriptions.psql
-INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (1, 1, 'Reward for level 1', 10, 'static/images/membership-img/lvl1.webp');
-INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (1, 2, 'Reward for level 2', 20, 'static/images/membership-img/lvl2.webp');
-INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (2, 1, 'Reward for level 1', 15, 'static/images/membership-img/lvl1.webp');
-INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (2, 2, 'Reward for level 2', 25, 'static/images/membership-img/lvl2.webp');
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (1, 1, ARRAY['Warlock PDF', 'Access to patron-only feed', 'sneak peek photos of upcoming releases','patron-only polls'], 10, 'static/images/membership-img/lvl1.webp');
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (1, 2, ARRAY['Warlock Lair: 1 double-size adventure each month, ready to play (about 15 pages)','A bit behind-the-scenes, including early looks at art  sketches', 'Plus the elements of the $1 tier'], 20, 'static/images/membership-img/lvl2.webp');
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (2, 1, ARRAY['Thanks for supporting us!'], 3, 'static/images/membership-img/lvl1.webp');
+INSERT INTO subscriptions (campaign_id, level, rewards, amount, art) VALUES (2, 2, ARRAY['Get the unaired Episode 0 we filmed as a proof of concept for this podcast.','Get early access to clips and highlights of the next episode before the full video is released on YouTube.', 'Get the UNCENSORED version of Episode 25 - The Hentai Episode', 'Early access to Clips', 'Bonus episode'], 5, 'static/images/membership-img/lvl2.webp');
 
 -- migration_11_insert_dummy_data_supporters.psql
 INSERT INTO supporters (user_id, campaign_id, subscription_id, amount) VALUES (1, 1, 1, 10);
