@@ -26,20 +26,24 @@ body {
 
 
  .card2 {
-   overflow: hidden;
-   box-shadow: hidden; 
-  border-radius: 0.2rem;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   cursor: pointer;
-   transition-duration: 200ms ease-in;
-
+  
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+    width: 50%;
+    padding: 20px;
+    overflow-y: auto;
+    margin-top: 5rem;
+    border-radius: 10px;
+    color: black;
+    margin: 0 auto;
+    margin-top: 1rem;
+  
   }
 
  .card2__image {
   height: 8rem;
-  width: 140%;
+  width: 100%;
   object-fit: cover;
 }
 
