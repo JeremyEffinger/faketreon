@@ -17,32 +17,3 @@
  .line{
     flex: 1;
  }
-
- .container{
-    color: red;
-    flex: auto;
-    max-width: 50vmax;
-    /* border: 3px;
-    border-style:solid;
-    border-color: rgb(255, 255, 255); */
- }
-
- .about-section {
-    border: 1px;
-    border-style:solid;
-    border-color: rgb(164, 155, 155);
-    margin: 15px;
- }
-
- .goals {
-    border: 1px;
-    border-style:solid;
-    border-color: rgb(164, 155, 155);
-    margin: 15px;
- }
- .patron-boons{
-    border: 1px;
-    border-style:solid;
-    border-color: rgb(164, 155, 155);
-    margin: 15px;
- }

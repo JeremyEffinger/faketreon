@@ -1,4 +1,6 @@
 import React from "react";
+import { FaHeart } from "react-icons/fa";
+import './patronboons.css'
 
 function PatronBoons(){
 
@@ -6,20 +8,22 @@ function PatronBoons(){
         <div>
             <div className="patron-boons">
                     <h4>
-                        become a patron
+                 Become a patron
                     </h4>
                     <span className="images">
                         <div className="pix">
-                        image 1
+                        Unlock 178 exclusive posts
                         </div>
                         <div className="pix">
-                        image 2   
+                    <FaHeart />
+                        Be part of the community  
                         </div>
                         <div className="pix">
-                        image 3    
+                        
+                        Get exclusive merch   
                         </div>
                         <div className="pix">
-                        image 4   
+                        Connect via private message  
                         </div>
                     </span>
                 </div>

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@esbuild/darwin-arm64": "^0.17.5",
     "axios": "^1.2.3",
     "concurrently": "^7.6.0",
     "cors": "^2.8.5",

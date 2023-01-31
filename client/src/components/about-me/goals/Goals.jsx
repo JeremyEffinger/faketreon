@@ -1,6 +1,7 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
 import CreatorState from "../../../CreatorState";
+import './goals.css'
 
 function Goals(){
     let text = useRecoilValue(CreatorState)
@@ -12,7 +13,7 @@ function Goals(){
                         <div className="line"> Goals on the left</div><a className="line" href="">link to view all</a><button className="line">left</button><button className="line">right</button>
                     </div>
                     <div>
-                        Number of patrons 700/1000 or something
+                       <p>Number of patrons 700/1000 or something</p> 
                     </div>
                     <div>
                         Loading bar with CSS ---------
