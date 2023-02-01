@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import CreatorInfoState from "./CreatorInfoState";
+import UrlNameState from "./UrlNameState";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Campaign from "./containers/Campaign/Campaign.jsx";
@@ -23,19 +24,26 @@ const [creatorInfo, setCreatorInfo ] = useRecoilState(CreatorInfoState)
       });
   }
 
-  const [currentPath, setCurrentPath] = useState("");
+  //const [currentPath, setCurrentPath] = useState("");
+  const [currentUrl, setCurrentUrl] = useRecoilState(UrlNameState)
 
   useEffect(() => {
     const pathArray = window.location.pathname.split("/");
-    setCurrentPath(pathArray[1]);
+    setCurrentUrl(pathArray[1]);
   }, []);
+
+
+  // useEffect(() => {
+  //   const pathArray = window.location.pathname.split("/");
+  //   setCurrentPath(pathArray[1]);
+  // }, []);
 
   return (
     <Router>
       <div className="App">
         <Header />
         <Routes>
-          <Route path="*" element={<Campaign currentPath={currentPath} />} />
+          <Route path="*" element={<Campaign currentPath={currentUrl} />} />
         </Routes>
         <Footer />
         <div>
