@@ -21,7 +21,7 @@ const Campaign = (props) => {
   useEffect(() => {
     function getCreatorPageData() {
       axios
-        .get(urlWithProxy + "/creators/username/" + UrlNameState)
+        .get(urlWithProxy + "/creatorcampaign/" + UrlNameState)
         .then((res) => setCreatorInfo(res.data))
         .catch((err) => {
           err;
