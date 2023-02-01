@@ -2,7 +2,7 @@ import { atom, selector } from "recoil";
 
 const UrlNameState = atom({
   key: "UrlNameState",
-  default: "",
+  default: "blah",
 });
 
 export default UrlNameState
