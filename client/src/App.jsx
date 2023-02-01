@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import Campaign from "./containers/Campaign/Campaign";
+import Campaign from "./containers/Campaign/Campaign.jsx";
 
 function App() {
   const [data, setData] = useState("{}");
