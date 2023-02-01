@@ -10,19 +10,20 @@ import Footer from "./components/Footer/Footer.jsx";
 import Campaign from "./containers/Campaign/Campaign.jsx";
 
 function App() {
+  //---> pretty sure all of this can just go into campaign.
   // const [data, setData] = useState("{}");
-  const urlWithProxy = "/api/v1";
+//   const urlWithProxy = "/api/v1";
 
-const [creatorInfo, setCreatorInfo ] = useRecoilState(CreatorInfoState)
+// const [creatorInfo, setCreatorInfo ] = useRecoilState(CreatorInfoState)
 
-  function getDataFromServer() {
-    axios
-      .get(urlWithProxy)
-      .then((res) => setCreatorInfo(res.data))
-      .catch((err) => {
-        console.error(err);
-      });
-  }
+//   function getDataFromServer() {
+//     axios
+//       .get(urlWithProxy)
+//       .then((res) => setCreatorInfo(res.data))
+//       .catch((err) => {
+//         console.error(err);
+//       });
+//   }
 
   //const [currentPath, setCurrentPath] = useState("");
   const [currentUrl, setCurrentUrl] = useRecoilState(UrlNameState)
@@ -46,10 +47,10 @@ const [creatorInfo, setCreatorInfo ] = useRecoilState(CreatorInfoState)
           <Route path="*" element={<Campaign currentPath={currentUrl} />} />
         </Routes>
         <Footer />
-        <div>
+        {/* <div>
           <button onClick={getDataFromServer}>Access server using proxy</button>
           <p>data : {console.log(creatorInfo)}</p>
-        </div>
+        </div> */}
       </div>
     </Router>
   );
