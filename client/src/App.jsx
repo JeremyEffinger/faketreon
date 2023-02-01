@@ -1,6 +1,6 @@
 import "./styling/App.css";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
@@ -19,12 +19,19 @@ function App() {
       });
   }
 
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    const pathArray = window.location.pathname.split("/");
+    setCurrentPath(pathArray[1]);
+  }, []);
+
   return (
     <Router>
       <div className="App">
         <Header />
         <Routes>
-          <Route path="*" element={<Campaign />} />
+          <Route path="*" element={<Campaign currentPath={currentPath} />} />
         </Routes>
         <Footer />
         <div>
