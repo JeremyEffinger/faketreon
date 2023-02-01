@@ -1,9 +1,10 @@
 import "./styling/App.css";
 import axios from "axios";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Campaign from "./containers/Campaign/Campaign.jsx";
+import Loading from "./components/loading/Loading";
 
 function App() {
   const [data, setData] = useState("{}");
@@ -20,8 +21,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Campaign />
+      <Header />      
+        <Campaign />
       <div>
         <button onClick={getDataFromServer}>Access server using proxy</button>
         <p>data : {data.message}</p>
