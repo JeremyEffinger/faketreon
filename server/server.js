@@ -13,6 +13,7 @@ const server = express();
 //start middleware
 server.use(express.json());
 server.use("/static", express.static("server/public"));
+
 //api routes
 server.get("/api/v1", (req, res) => {
   res.json({ message: "Hello!" });
@@ -44,6 +45,9 @@ server.put("/api/v1/supporters/:id", (req, res, next) => {});
 server.delete("/api/v1/supporters/:id", (req, res, next) => {});
 
 //fail over routes
+server.use("/", express.static("dist"));
+//server.get("*", (req, res, next) => {} )
+
 server.use((req, res, next) => {
   res.contentType("text/plain").status(404).send("Not Found");
 });
