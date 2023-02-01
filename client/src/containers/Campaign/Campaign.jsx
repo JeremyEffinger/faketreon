@@ -15,7 +15,7 @@ const Campaign = (props) => {
   useEffect(() => {
     function getCreatorPageData() {
       axios
-        .get(urlWithProxy + "/creators/username/" + props.currentPath)
+        .get(urlWithProxy + "/creatorcampaign/" + props.currentPath)
         .then((res) => setCreatorData(res.data))
         .catch((err) => {
           err;

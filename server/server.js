@@ -4,6 +4,7 @@ import creatorRoutes from "./routes/creatorRoutes.js";
 import campaignRoutes from "./routes/campaignRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
 import subscriptionRoutes from "./routes/subscriptionRoutes.js";
+import creatorCampaignRoutes from "./routes/creatorCampaignRoutes.js";
 
 //setup server
 const PORT = 6000;
@@ -31,6 +32,9 @@ server.use("/api/v1/blogs", blogRoutes);
 
 // Subscriptions routes
 server.use("/api/v1/subscriptions", subscriptionRoutes);
+
+// CreatorCampaign routes
+server.use("/api/v1/creatorcampaign", creatorCampaignRoutes);
 
 // Supporters routes
 server.get("/api/v1/supporters", (req, res, next) => {});

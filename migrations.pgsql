@@ -12,6 +12,7 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL UNIQUE,
+    avatar VARCHAR(255),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -74,8 +75,8 @@ CREATE TABLE posts (
 );
 
 -- migration_7_insert_dummy_data_users.psql
-INSERT INTO users (email, password, name) VALUES ('koboldpress@example.com', 'password', 'koboldpress');
-INSERT INTO users (email, password, name) VALUES ('trashtaste@example.com', 'password', 'trashtaste');
+INSERT INTO users (email, password, name, avatar) VALUES ('koboldpress@example.com', 'password', 'koboldpress', 'static/images/avatars/dummyPhoto1.png');
+INSERT INTO users (email, password, name, avatar) VALUES ('trashtaste@example.com', 'password', 'trashtaste', 'static/images/avatars/dummyPhoto2.webp');
 
 -- migration_8_insert_dummy_data_creators.psql
 INSERT INTO creators (user_id, name, bio) VALUES (1, 'Kobold Press', 'Bio of creator one');
@@ -96,7 +97,22 @@ INSERT INTO supporters (user_id, campaign_id, subscription_id, amount) VALUES (1
 INSERT INTO supporters (user_id, campaign_id, subscription_id, amount) VALUES (2, 2, 2, 25);
 
 -- migration_12_insert_dummy_data_posts.psql
-INSERT INTO posts (campaign_id, title, content) VALUES (1, 'Post One', 'Content of post one');
-INSERT INTO posts (campaign_id, title, content) VALUES (1, 'Post Two', 'Content of post two');
-INSERT INTO posts (campaign_id, title, content) VALUES (2, 'Post Three', 'Content of post three');
-INSERT INTO posts (campaign_id, title, content) VALUES (2, 'Post Four', 'Content of post four');
+INSERT INTO posts (campaign_id, title, content) VALUES (1, 'Post One Title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quod eo liquidius faciet, si perspexerit rerum inter eas verborumne sit controversia. Sed finge non solum callidum eum, qui aliquid improbe faciat, verum etiam praepotentem, ut M. Atque hoc loco similitudines eas, quibus illi uti solent, dissimillimas proferebas. Quoniam, si dis placet, ab Epicuro loqui discimus.
+
+Duo Reges: constructio interrete. Quid turpius quam sapientis vitam ex insipientium sermone pendere? Si enim ad populum me vocas, eum. Ad eos igitur converte te, quaeso. Bona autem corporis huic sunt, quod posterius posui, similiora. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Qua tu etiam inprudens utebare non numquam. Quando enim Socrates, qui parens philosophiae iure dici potest, quicquam tale fecit?
+');
+INSERT INTO posts (campaign_id, title, content) VALUES (1, 'Post Two Title', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et tamen ego a philosopho, si afferat eloquentiam, non asperner, si non habeat, non admodum flagitem. Bonum incolumis acies: misera caecitas. Non quam nostram quidem, inquit Pomponius iocans; Quae hic rei publicae vulnera inponebat, eadem ille sanabat. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris, divitiae, valitudo; Hoc Hieronymus summum bonum esse dixit. </p>
+
+<p>Si enim, ut mihi quidem videtur, non explet bona naturae voluptas, iure praetermissa est; Duo Reges: constructio interrete. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae recordamur. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Nam bonum ex quo appellatum sit, nescio, praepositum ex eo credo, quod praeponatur aliis. Facile est hoc cernere in primis puerorum aetatulis. An me, inquam, nisi te audire vellem, censes haec dicturum fuisse? </p>
+
+');
+INSERT INTO posts (campaign_id, title, content) VALUES (2, 'Post One Title', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quorum altera prosunt, nocent altera. Quam ob rem tandem, inquit, non satisfacit? </p>
+
+<p>Nam ista vestra: Si gravis, brevis; Quid iudicant sensus? Non potes, nisi retexueris illa. Duo Reges: constructio interrete. Tubulo putas dicere? Quis istud possit, inquit, negare? </p>
+
+');
+INSERT INTO posts (campaign_id, title, content) VALUES (2, 'Post Two Title', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? Neque enim disputari sine reprehensione nec cum iracundia aut pertinacia recte disputari potest. Duo Reges: constructio interrete. Mihi enim satis est, ipsis non satis. Cum autem paulum firmitatis accessit, et animo utuntur et sensibus conitunturque, ut sese erigant, et manibus utuntur et eos agnoscunt, a quibus educantur. -delector enim, quamquam te non possum, ut ais, corrumpere, delector, inquam, et familia vestra et nomine. Quod idem cum vestri faciant, non satis magnam tribuunt inventoribus gratiam. Et ille ridens: Video, inquit, quid agas; Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Omnium enim rerum principia parva sunt, sed suis progressionibus usa augentur nec sine causa; An me, inquis, tam amentem putas, ut apud imperitos isto modo loquar? Quamquam id quidem, infinitum est in hac urbe; </p>
+
+<p>Sed mehercule pergrata mihi oratio tua. Etsi ea quidem, quae adhuc dixisti, quamvis ad aetatem recte isto modo dicerentur. Hoc loco tenere se Triarius non potuit. Audeo dicere, inquit. Restant Stoici, qui cum a Peripateticis et Academicis omnia transtulissent, nominibus aliis easdem res secuti sunt. Nam si pravitatem inminutionemque corporis propter se fugiendam putamus, cur non etiam, ac fortasse magis, propter se formae dignitatem sequamur? </p>
+
+');
