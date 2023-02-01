@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import CreatorState from "../../../CreatorState";
+import CreatorState from "../../../CreatorInfoState";
 import "./goals.css";
 
 function Goals(props) {

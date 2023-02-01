@@ -1,5 +1,5 @@
 import React from "react";
-import CreatorState from "../../../CreatorState";
+import CreatorState from "../../../CreatorInfoState";
 import { useRecoilValue } from "recoil";
 import "./about.css";
 
@@ -10,8 +10,8 @@ function About(props) {
       <h1>About Kobold Press</h1>
       <div>
         <div className="about">
-          <h4>{text.campaigns[0].title}</h4>
-          <p className="about-section">{text.campaigns[0].description}</p>
+          <h4>{text.message}</h4>
+          <p className="about-section">{text.message}</p>
           <p>
             Thank You for Supporting Warlock! Your support means we can release
             new 5th Edition setting and rules material every month. We explore
