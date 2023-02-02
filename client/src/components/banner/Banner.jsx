@@ -1,12 +1,18 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
+import CreatorInfoState from '../../CreatorInfoState';
 
 const Banner = (props) => {
-  return (
-    <div className="banner">
-      <h1>Welcome to My App</h1>
-      <p>This is a banner section on your webpage.</p>
-    </div>
-  );
-};
+  const text = useRecoilValue(CreatorInfoState);
+  if(text.campaigns == null){
+    return (<div></div>)
+    } else { 
+    return (
+      <div className="banner">
+        <img src={text.campaigns[0].banner}/>
+      </div>
+    );
+  };
+}
 
 export default Banner;
