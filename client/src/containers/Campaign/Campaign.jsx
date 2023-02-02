@@ -17,20 +17,23 @@ const Campaign = (props) => {
 
   //const [creatorData, setCreatorData] = useState("{}");
   const urlWithProxy = "/api/v1";
+  let username = useRecoilValue(UrlNameState);
 
   useEffect(() => {
     function getCreatorPageData() {
       axios
-        .get(urlWithProxy + "/creatorcampaign/" + UrlNameState)
-        .then((res) => setCreatorInfo(res.data))
+        .get(urlWithProxy + "/creatorcampaign/" + username)
+        .then((res) => {
+          console.log(res.data)
+          setCreatorInfo(res.data)})
         .catch((err) => {
           err;
         });
     }
     getCreatorPageData();
-  }, [UrlNameState]);
+  }, [username]);
 
-  console.log("creator info:", creatorInfo);
+  //console.log("creator info:", creatorInfo.user[0].id);
   console.log("URL", useRecoilValue(UrlNameState))
 
   return (

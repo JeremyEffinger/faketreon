@@ -1,15 +1,18 @@
 import React from "react";
-import Card from "./Card/Card.jsx";
+import Card1 from "./Cards/Card1.jsx";
+import Card2 from "./Cards/Card2.jsx";
+import Card3 from "./Cards/Card3.jsx";
 import "./membership.css";
 
 export const Membership = (props) => {
-  const dummyimage = "static/images/membership-img/asset1.jpeg";
+  const dummyimage = "";
   return (
     <div>
+      <h1>Select A Membership Level</h1>
       <div className="wrapper">
-        <Card dummyimage={dummyimage} />
-        <Card dummyimage={dummyimage} />
-        <Card dummyimage={dummyimage} />
+        <Card1 dummyimage={dummyimage} />
+        <Card2 dummyimage={dummyimage} />
+        <Card3 dummyimage={dummyimage} />
       </div>
 
       <div className="patrons">

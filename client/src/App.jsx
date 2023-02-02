@@ -28,8 +28,9 @@ function App() {
   //const [currentPath, setCurrentPath] = useState("");
   const [currentUrl, setCurrentUrl] = useRecoilState(UrlNameState)
 
+  const pathArray = window.location.pathname.split("/");
+
   useEffect(() => {
-    const pathArray = window.location.pathname.split("/");
     setCurrentUrl(pathArray[1]);
   }, []);
 
