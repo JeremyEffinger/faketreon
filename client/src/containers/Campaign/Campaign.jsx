@@ -7,9 +7,9 @@ import Banner from "../../components/banner/Banner.jsx";
 import Avatar from "../../components/avatar/Avatar.jsx";
 import Membership from "../../components/membership/Membership.jsx";
 import Loading from "../../components/loading/Loading.jsx";
-//import AboutMe from "../../components/about-me/AboutMe.jsx";
 import CreatorInfoState from "../../CreatorInfoState.jsx";
 import UrlNameState from "../../UrlNameState.jsx";
+//import AboutMe from "../../components/about-me/AboutMe.jsx";ß
 
 const Campaign = (props) => {
 
