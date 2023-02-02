@@ -41,3 +41,6 @@ function Goals(props) {
         </React.Fragment>
     )
 }
+}
+
+export default Goals

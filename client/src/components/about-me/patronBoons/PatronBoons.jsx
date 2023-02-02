@@ -35,3 +35,7 @@ function PatronBoons(props) {
         </div>
     )
 }
+}
+
+
+export default PatronBoons
