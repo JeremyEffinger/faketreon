@@ -6,7 +6,7 @@ function Loading(){
         <h1>
             Loading...
         </h1>
-        <div className="container">
+        <div className="container3">
             <div className="spinner-box">
                 <div className="configure-border-1">  
                     <div className="configure-core"></div>
