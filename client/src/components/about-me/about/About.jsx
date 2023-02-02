@@ -1,17 +1,21 @@
 import React from "react";
-import CreatorState from "../../../CreatorState";
+import CreatorInfoState from "../../../CreatorInfoState";
 import { useRecoilValue } from "recoil";
 import "./about.css";
 
 function About(props) {
-  const text = useRecoilValue(CreatorState);
+  const text = useRecoilValue(CreatorInfoState); 
+  if(text.campaigns == null){
+    return (<div></div>)
+  } else { 
+  
   return (
     <div className="about-box">
       <h1>About Kobold Press</h1>
       <div>
         <div className="about">
-          <h4>{text.campaigns[0].title}</h4>
-          <p className="about-section">{text.campaigns[0].description}</p>
+          <h4>{text.campaigns[0].description}</h4>
+          <p className="about-section">{text.message}</p>
           <p>
             Thank You for Supporting Warlock! Your support means we can release
             new 5th Edition setting and rules material every month. We explore
@@ -42,6 +46,7 @@ function About(props) {
       </div>
     </div>
   );
+}
 }
 
 export default About;

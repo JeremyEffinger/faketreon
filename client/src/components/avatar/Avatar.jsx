@@ -1,15 +1,28 @@
 import React from "react";
 import style from "../avatar/avatar.module.scss";
+import { useRecoilValue } from "recoil";
+import CreatorInfoState from "../../CreatorInfoState";
 
 const Avatar = (props) => {
-  return (
-    <div className={style.avatar}>
-      <img
-        className={style.photo}
-        src={"static/images/avatars/dummyPhoto.png"}
-      />
-    </div>
-  );
-};
+  const text = useRecoilValue(CreatorInfoState);
+  if(text.campaigns == null){
+      return (<div></div>)
+    } else { 
 
+    return (
+      <div className={style.avatar}>
+        <img
+          className={style.photo}
+          src={text.user[0].avatar}
+        />
+        <h4>
+          {text.campaigns[0].title}
+        </h4>
+        <div>
+          {text.campaigns[0].description}
+        </div>
+      </div>
+    );
+  };
+}
 export default Avatar;
