@@ -45,7 +45,7 @@ const Campaign = (props) => {
 
   async function delayForDemo(promise) {
     return new Promise(resolve => {
-      setTimeout(resolve, 100000);
+      setTimeout(resolve, 5000);
     }).then(() => promise);
   }
 
