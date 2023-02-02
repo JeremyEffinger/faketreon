@@ -1,16 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CreatorState from "../../../CreatorState";
-import {useRecoilValue} from "recoil"
+import { useRecoilValue} from "recoil"
 import './about.css'
 
 
 function About(){
     const text = useRecoilValue(CreatorState)
-    const delay = ms => new Promise(res => setTimeout(res, ms));
 
-    const yourFunction = async () => {
-        await delay(5000);
-        console.log("Waited 5s");
+    // useEffect(() => {
+    //     const delay = ms => new Promise(res => setTimeout(res, ms));
+
+    // const yourFunction = async () => {
+    //     await delay(5000);
+    //     console.log("Waited 5s");
+    
     return (
         <div className="about-box">
         <h1>About Kobold Press</h1>
@@ -41,7 +44,8 @@ We're excited to expand the world of 5th edition dark fantasy, and deeply apprec
         </div>
     )
 }
-yourFunction();
-}
+// yourFunction();
+// },[])
+// }
 
 export default About
