@@ -1,22 +1,17 @@
 import React from "react";
-import Card from './Card2/Card2.jsx'
+import Card1 from "./Cards/Card1.jsx";
+import Card2 from "./Cards/Card2.jsx";
+import Card3 from "./Cards/Card3.jsx";
 
+function RecentPosts(props) {
 
-function RecentPosts(){
-
-    return (
-        <div className="recentposts">
-            
-        
-   <Card />
-   <Card />
-   <Card />
-
-        </div>
-      
-        
-    )
+  return (
+    <div className="recentposts">
+      <Card1 />
+      <Card2 />
+      <Card3 />
+    </div>
+  );
 }
 
-
-export default RecentPosts
+export default RecentPosts;

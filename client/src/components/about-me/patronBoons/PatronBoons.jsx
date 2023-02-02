@@ -1,9 +1,14 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
-import './patronboons.css'
+import CreatorInfoState from "../../../CreatorInfoState";
+import { useRecoilValue } from "recoil";
+import "./patronboons.css";
 
-function PatronBoons(){
-
+function PatronBoons(props) {
+  const text = useRecoilValue(CreatorInfoState);
+  if(text.campaigns == null){
+      return (<div></div>)
+      } else { 
     return (
         <div>
             <div className="patron-boons">
@@ -30,5 +35,3 @@ function PatronBoons(){
         </div>
     )
 }
-
-export default PatronBoons

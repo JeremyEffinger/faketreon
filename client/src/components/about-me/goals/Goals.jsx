@@ -1,11 +1,15 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import CreatorState from "../../../CreatorState";
-import './goals.css'
+import CreatorInfoState from "../../../CreatorInfoState";
+import { AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineRight } from "react-icons/ai";
+import "./goals.css";
 
-
-function Goals(){
-    let text = useRecoilValue(CreatorState)
+function Goals(props) {
+  const text = useRecoilValue(CreatorInfoState);
+  if(text.campaigns == null){
+      return (<div></div>)
+    } else { 
 
     return (
         <React.Fragment>
@@ -37,5 +41,3 @@ function Goals(){
         </React.Fragment>
     )
 }
-
-export default Goals
