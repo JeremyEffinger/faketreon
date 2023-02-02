@@ -8,6 +8,7 @@ import UrlNameState from "./UrlNameState";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Campaign from "./containers/Campaign/Campaign.jsx";
+import Loading from "./components/loading/Loading";
 
 function App() {
   //---> pretty sure all of this can just go into campaign.

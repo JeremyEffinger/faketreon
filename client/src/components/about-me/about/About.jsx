@@ -48,5 +48,8 @@ function About(props) {
   );
 }
 }
+// yourFunction();
+// },[])
+// }
 
 export default About;
