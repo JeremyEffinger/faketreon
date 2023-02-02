@@ -12,28 +12,35 @@ function Goals(props) {
     } else { 
 
     return (
-      <div>
-        <div className="goals">
-          <div className="firstLine">
-            <div className="line"> Goals</div>
-            <a className="line" href="">
-              View all
-            </a>
-            <button className="line"><AiOutlineLeft/> </button>
-            <button className="line"><AiOutlineRight/></button>
-          </div>
-          <div>
-            <p>Number of patrons 700/1000 or something</p>
-          </div>
-          <div>Loading bar with CSS ---------</div>
-          <div>
-            <h4>Title of next tier rewards</h4>
-            description of rewards
-          </div>
-          <div>10 of 20 tiers</div>
+        <React.Fragment>
+        <div>
+            <div className="goals">
+                    <div className="firstLine">
+                        <div className="line"> Goals</div><a className="goals__view" href="">View all</a>
+                        <button className="arrow-left">left </button>
+                        <button className="arrow-button">right</button>
+                    </div>
+                    <div>
+                    <p className="p__patron">
+                      <strong className="strong">100</strong> -
+                       <span className="reached"> reached!</span>
+                       &nbsp; patrons       
+                    </p>
+                    </div>
+                    <div className="meter">
+                    <span className="bar"></span>
+                    </div>
+                    <div>
+                     <p className="goals__text">At the most basic level, the Kobolds create a dark and intermittent PDF for 5E play. We spend the money raised on the regular stable of Kobold Press artists, writers, and editors. This goal covers 6 issues a year. We can't ship a print game booklet at this level, but we'll be ready for the next level....</p>
+                    </div>
+                    <div>
+                        10 of 20 tiers
+                    </div>
+                </div>
         </div>
-      </div>
-    );
-  }
+        </React.Fragment>
+    )
 }
-export default Goals;
+}
+
+export default Goals
