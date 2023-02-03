@@ -5,9 +5,7 @@ import Card from "./Cards/Card.jsx";
 
 function RecentPosts(props) {
   const text = useRecoilValue(CreatorInfoState);
-  if (text.campaigns == null) {
-    return <div></div>;
-  } else {
+
     return (
       <div className="recentposts">
         {text.posts.map((post, index) => {
@@ -15,7 +13,6 @@ function RecentPosts(props) {
         })}
       </div>
     );
-  }
 }
 
 export default RecentPosts;
