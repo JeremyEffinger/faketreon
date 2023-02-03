@@ -1,14 +1,13 @@
 import React from "react";
 import CreatorInfoState from "../../CreatorInfoState";
 import { useRecoilValue } from "recoil";
-import Card from "./Card/Card.jsx";
+import { lazy } from "react";
 import "./membership.css";
+
+const Card = lazy(() => import("./Card/Card.jsx"));
 
 export const Membership = (props) => {
   const text = useRecoilValue(CreatorInfoState);
-  if (text.campaigns == null) {
-    return <div></div>;
-  } else {
     return (
       <div>
         <h1>Select A Membership Level</h1>
@@ -31,7 +30,6 @@ export const Membership = (props) => {
         </div>
       </div>
     );
-  }
 };
 
 export default Membership;
