@@ -21,9 +21,8 @@ const getDataByUsername = async (req, res, next) => {
       await sql`SELECT id, name, avatar FROM users WHERE name = ${username}`;
 
     // get all the user's campaigns
-    const campaigns = await sql`
-        SELECT * FROM campaigns WHERE creator_id = ${userId[0].id}
-      `;
+    const campaigns =
+      await sql`SELECT * FROM campaigns WHERE creator_id = ${userId[0].id}`;
 
     // get all subscriptions for each of the user's campaigns
     const subscriptionLevels = [];
@@ -41,6 +40,11 @@ const getDataByUsername = async (req, res, next) => {
     SELECT * FROM posts WHERE campaign_id = ${campaigns[0].id}
   `;
 
+    const bio =
+      await sql`SELECT bio FROM creators WHERE user_id = ${userId[0].id}`;
+
+    userId[0].bio = bio[0].bio;
+    console.log(userId);
     res.json({
       user: userId,
       campaigns: campaigns,
