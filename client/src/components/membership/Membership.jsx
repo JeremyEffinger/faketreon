@@ -15,7 +15,9 @@ export const Membership = (props) => {
         <div className="wrapper">
           {text.subscriptionLevels[0].subscriptions.map(
             (subscription, index) => {
-              return <Card index={index} subscription={subscription} />;
+              return (
+                <Card index={index} key={index} subscription={subscription} />
+              );
             }
           )}
         </div>
