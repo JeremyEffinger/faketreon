@@ -5,9 +5,6 @@ import "./about.css";
 
 function About(props) {
   const text = useRecoilValue(CreatorInfoState); 
-  if(text.campaigns == null){
-    return (<div></div>)
-  } else { 
   
   return (
     <div className="about-box">
@@ -47,9 +44,5 @@ function About(props) {
     </div>
   );
 }
-}
-// yourFunction();
-// },[])
-// }
 
 export default About;

@@ -5,9 +5,7 @@ import CreatorInfoState from "../../CreatorInfoState";
 
 const Avatar = (props) => {
   const text = useRecoilValue(CreatorInfoState);
-  if(text.campaigns == null){
-      return (<div></div>)
-    } else { 
+ 
 
     return (
       <div className={style.avatar}>
@@ -23,6 +21,5 @@ const Avatar = (props) => {
         </div>
       </div>
     );
-  };
 }
 export default Avatar;
