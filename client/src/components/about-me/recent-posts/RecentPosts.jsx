@@ -11,7 +11,7 @@ function RecentPosts(props) {
     return (
       <div className="recentposts">
         {text.posts.map((post, index) => {
-          return <Card index={index} />;
+          return <Card index={index} key={index} />;
         })}
       </div>
     );
