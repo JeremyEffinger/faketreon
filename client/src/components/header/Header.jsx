@@ -2,6 +2,7 @@
  import "./header.css";
  import { Outlet } from "react-router-dom"
  //import recoil from "recoil";
+ import Navbar from "./Navbar/Navbar";
 
  function Header(props){
 
@@ -18,6 +19,7 @@
  return (
    <div className="container">
       <header className="header">
+         <Navbar />
          <a rel="stylesheet" href="https://www.google.com" >link1</a>
          <input onBlur={handleBlur}type="text"/>
          <button  type="submit">BUTTONS</button>
