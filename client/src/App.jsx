@@ -1,60 +1,81 @@
 import "./styling/App.css";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import CreatorInfoState from "./CreatorInfoState";
+import { createBrowserRouter, RouterProvider, } from "react-router-dom"
 import UrlNameState from "./UrlNameState";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Campaign from "./containers/Campaign/Campaign.jsx";
+import HomePage from "./components/home-page/HomePage";
+import ErrorPage from "./components/error-page/ErrorPage";
 import Loading from "./components/loading/Loading";
 
 function App() {
-  //---> pretty sure all of this can just go into campaign.
-  // const [data, setData] = useState("{}");
-//   const urlWithProxy = "/api/v1";
 
-// const [creatorInfo, setCreatorInfo ] = useRecoilState(CreatorInfoState)
-
-//   function getDataFromServer() {
-//     axios
-//       .get(urlWithProxy)
-//       .then((res) => setCreatorInfo(res.data))
-//       .catch((err) => {
-//         console.error(err);
-//       });
-//   }
-
-  //const [currentPath, setCurrentPath] = useState("");
   const [currentUrl, setCurrentUrl] = useRecoilState(UrlNameState)
 
   const pathArray = window.location.pathname.split("/");
-
   useEffect(() => {
     setCurrentUrl(pathArray[1]);
   }, []);
 
+  function getCreatorPageData() {
+    axios
+      .get(urlWithProxy + "/creatorcampaign/" + username)
+      .then((res) => {
+        console.log(res.data)
+        setCreatorInfo(res.data)})
+      .catch((err) => {
+        err;
+      });
+  }
 
-  // useEffect(() => {
-  //   const pathArray = window.location.pathname.split("/");
-  //   setCurrentPath(pathArray[1]);
-  // }, []);
+
+
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Header />,
+      errorElement: <ErrorPage />,
+      // loader: rootLoader,
+      children: [
+        {
+          path: "/",
+          element: <HomePage />,
+          errorElement: <ErrorPage />,
+          // loader: 
+        },
+        {
+          path: "/:username",
+          element: <Campaign />,
+          errorElement: <ErrorPage />,
+        }
+      ],
+    },
+  ])
 
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="*" element={<Campaign currentPath={currentUrl} />} />
-        </Routes>
-        <Footer />
-        {/* <div>
-          <button onClick={getDataFromServer}>Access server using proxy</button>
-          <p>data : {console.log(creatorInfo)}</p>
-        </div> */}
-      </div>
-    </Router>
+    
+    <div className="App">
+      <RouterProvider router={router} fallbackElement={<Loading/>}/>
+    </div>
+
+
+
+
+    // <Router>
+    //   <div className="App">
+    //     <Header />
+    //     <Routes>
+    //       <Route 
+    //       path="*" 
+    //       element={<Campaign currentPath={currentUrl} />} />
+    //     </Routes>
+    //     <Footer />
+    //   </div>
+    // </Router>
   );
 }
 
