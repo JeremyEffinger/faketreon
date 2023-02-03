@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 import { IoLogoFacebook, IoAirplaneSharp, IoAccessibilitySharp } from "react-icons/io5";
 import { MenuItems } from "./MenuItems"
 import "./Navbar.css"
@@ -7,6 +8,8 @@ import { useState } from 'react';
 
 const Navbar = () => {
   return (
+<div>
+
     <nav className="NavbarItems">
 
       <h1 className="navbar-logo">
@@ -28,8 +31,11 @@ const Navbar = () => {
           )
         })}
       </ul>
-      
     </nav>
+
+    <Outlet />
+    
+</div>
   )
 }
 
