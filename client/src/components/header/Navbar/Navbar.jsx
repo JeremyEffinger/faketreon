@@ -14,7 +14,7 @@ const Navbar = () => {
 
       <h1 className="navbar-logo">
         
-      <svg height="79.83496848435058" className='css-1j8o68f' viewBox="-5 0 79.2062113951638 79.83496848435058" width="79.2062113951638"><defs id="SvgjsDefs1762"><linearGradient id="SvgjsLinearGradient1767"><stop id="SvgjsStop1768" stop-color="#00ddff" offset="0"></stop><stop id="SvgjsStop1769" stop-color="#ff00d4" offset="1"></stop></linearGradient></defs><g id="SvgjsG1763" featurekey="FRM3ZD-0" transform="matrix(5.508457183837891,0,0,5.508457183837891,-14.195267963964659,-30.470234391760762)" fill="url(#SvgjsLinearGradient1767)"><path d="M17.607 10.9648 l-13.59 0 l0 2.1824 l9.0599 0 l0 2.3476 l-9.0599 0 l0 4.5299 l-2.3477 0 l0 -11.407 l15.938 0 l0 2.3476 z"></path></g></svg>
+      <svg height="79.83496848435058" className='css-1j8o68f' viewBox="-5 0 79.2062113951638 79.83496848435058" width="79.2062113951638"><defs id="SvgjsDefs1762"><linearGradient id="SvgjsLinearGradient1767"><stop id="SvgjsStop1768" stopColor="#00ddff" offset="0"></stop><stop id="SvgjsStop1769" stopColor="#ff00d4" offset="1"></stop></linearGradient></defs><g id="SvgjsG1763" featurekey="FRM3ZD-0" transform="matrix(5.508457183837891,0,0,5.508457183837891,-14.195267963964659,-30.470234391760762)" fill="url(#SvgjsLinearGradient1767)"><path d="M17.607 10.9648 l-13.59 0 l0 2.1824 l9.0599 0 l0 2.3476 l-9.0599 0 l0 4.5299 l-2.3477 0 l0 -11.407 l15.938 0 l0 2.3476 z"></path></g></svg>
 
       </h1>
 
