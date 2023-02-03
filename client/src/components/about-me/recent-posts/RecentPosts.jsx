@@ -9,7 +9,7 @@ function RecentPosts(props) {
     return (
       <div className="recentposts">
         {text.posts.map((post, index) => {
-          return <Card index={index} />;
+          return <Card index={index} key={index} />;
           // we need to add post as a prop if we want to edit the posts eventually.
         })}
       </div>
