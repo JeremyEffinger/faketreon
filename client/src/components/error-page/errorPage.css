@@ -1,0 +1,13 @@
+
+.container4{
+    height: 90vh;
+    background-image: url("https://miro.medium.com/max/11502/1*ZiIdRKFDD0K-FebnLkJHsw.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.four-o-four{
+    font-size: 50px;
+    font-weight: 900;
+    padding-top: 20%;
+}
