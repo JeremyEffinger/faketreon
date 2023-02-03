@@ -3,15 +3,20 @@ import { useState, useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import axios from "axios";
 import { Suspense, lazy } from "react";
-import Banner from "../../components/banner/Banner.jsx";
-import Avatar from "../../components/avatar/Avatar.jsx";
-import Membership from "../../components/membership/Membership.jsx";
 import Loading from "../../components/loading/Loading.jsx";
 import CreatorInfoState from "../../CreatorInfoState.jsx";
 import UrlNameState from "../../UrlNameState.jsx";
-//import AboutMe from "../../components/about-me/AboutMe.jsx";ß
+
+//lazy function calls have to made at top level outside of the component
+// in this case though, I require a deplay of minimum 20 ms so the data can be called from the DB
 
 const Campaign = (props) => {
+
+
+const Avatar = lazy(() => delayForDemo(import("../../components/avatar/Avatar.jsx")));
+const Banner = lazy(() => delayForDemo(import("../../components/banner/Banner.jsx")));
+const Membership = lazy(() => delayForDemo(import("../../components/membership/Membership.jsx")));
+const AboutMe = lazy(() => delayForDemo(import('../AboutMe/AboutMe.jsx')));
 
 
   const [creatorInfo, setCreatorInfo] = useRecoilState(CreatorInfoState);
@@ -37,10 +42,10 @@ const Campaign = (props) => {
   }, [username]);
 
   //console.log("creator info:", creatorInfo.user[0].id);
-  console.log("URL", useRecoilValue(UrlNameState))
+  //console.log("URL", useRecoilValue(UrlNameState))
 
 
-  const AboutMe = lazy(() => delayForDemo(import('../../components/about-me/AboutMe.jsx')));
+
 
 
   async function delayForDemo(promise) {

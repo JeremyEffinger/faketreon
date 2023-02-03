@@ -7,9 +7,6 @@ import "./goals.css";
 
 function Goals(props) {
   const text = useRecoilValue(CreatorInfoState);
-  if(text.campaigns == null){
-      return (<div></div>)
-    } else { 
 
     return (
         <React.Fragment>
@@ -41,6 +38,6 @@ function Goals(props) {
         </React.Fragment>
     )
 }
-}
+
 
 export default Goals

@@ -1,5 +1,6 @@
  import React from "react";
  import "./header.css";
+ import { Outlet } from "react-router-dom"
  //import recoil from "recoil";
  import Navbar from "./Navbar/Navbar";
 
@@ -25,6 +26,7 @@
          <a rel="stylesheet" href="https://www.google.com" >link2</a>   
          <a rel="stylesheet" href="https://www.google.com" >link3</a>
       </header>
+      <Outlet />
     </div>
     )
  }

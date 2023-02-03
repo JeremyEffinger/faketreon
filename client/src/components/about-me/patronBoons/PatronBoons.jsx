@@ -6,9 +6,7 @@ import "./patronboons.css";
 
 function PatronBoons(props) {
   const text = useRecoilValue(CreatorInfoState);
-  if(text.campaigns == null){
-      return (<div></div>)
-      } else { 
+
     return (
         <div>
             <div className="patron-boons">
@@ -34,7 +32,7 @@ function PatronBoons(props) {
                 </div>
         </div>
     )
-}
+
 }
 
 

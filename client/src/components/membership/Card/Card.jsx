@@ -5,9 +5,6 @@ import "./card.css";
 export const Card = (props) => {
   const index = props.index;
   const text = useRecoilValue(CreatorInfoState);
-  if (text.campaigns == null) {
-    return <div></div>;
-  } else {
     return (
       <div className="card">
         <div className="card__body">
@@ -37,6 +34,5 @@ export const Card = (props) => {
         <button className="card__btn">Join</button>
       </div>
     );
-  }
 };
 export default Card;
