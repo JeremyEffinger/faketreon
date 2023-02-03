@@ -8,6 +8,7 @@
     top: 0;
     width: 100%;
     border-style: solid;
+    z-index: 1000;
 }
 
 .navbar-logo {

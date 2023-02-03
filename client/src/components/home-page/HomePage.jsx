@@ -1,30 +1,20 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./homePage.css";
 
 function HomePage (){
     return (
         <div>
-            <br /> very sneaky hidden text
-            <br />        
-            <br />this break line is where the header stops covering the HTML
-            <br />        
-            <br />
-            <br />            
-            <br />
-            <br />            
-            <br />
-            <br />            
-            <br />
-            <br />            
-            <br />
-            <br />            
-            <br />
-            <br />            
-            <br />
-            <br />
-            Music sounds better with you
+            <div className="homePage">
+                Creativity inspired by Money
+                <Link to="/posts">
+                  <button>Posts</button>
+                </Link>
+            </div>
         </div>
     )
+
+
 };
 
 export default HomePage
