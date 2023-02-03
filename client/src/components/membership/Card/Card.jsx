@@ -20,18 +20,19 @@ export const Card = (props) => {
               text.subscriptionLevels[0].subscriptions[index].amount +
               " / month"}
           </h2>
-
-          <p className="card__description">
-            {text.subscriptionLevels[0].subscriptions[index].rewards.map(
-              (reward, index) => {
-                return (
-                  <li key={index} className="rewardItem">
-                    {reward}
-                  </li>
-                );
-              }
-            )}
-          </p>
+          <ul>
+            <p className="card__description">
+              {text.subscriptionLevels[0].subscriptions[index].rewards.map(
+                (reward, index) => {
+                  return (
+                    <li key={index} className="rewardItem">
+                      {reward}
+                    </li>
+                  );
+                }
+              )}
+            </p>
+          </ul>
         </div>
         <button className="card__btn">Join</button>
       </div>
