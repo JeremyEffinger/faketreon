@@ -51,6 +51,12 @@ function App() {
           path: "/",
           element: <HomePage />,
           errorElement: <ErrorPage />,
+          children: [
+            {
+              path: "/",
+              element: <Footer />,
+            }
+          ]
         },
         {
           path: "/:username",
@@ -78,10 +84,10 @@ function App() {
             //return here returns the /trashtaste or whatever it is.
           }
           },
-          {
-            path: "/",
-            element: <Footer />,
-          },
+          // {
+          //   path: "/",
+          //   element: <Footer />,
+          // },
         ]
         }
       ],
