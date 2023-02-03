@@ -78,6 +78,10 @@ function App() {
             //return here returns the /trashtaste or whatever it is.
           }
           },
+          {
+            path: "/",
+            element: <Footer />,
+          },
         ]
         }
       ],
