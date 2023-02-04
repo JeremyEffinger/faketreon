@@ -44,7 +44,6 @@ const getDataByUsername = async (req, res, next) => {
       await sql`SELECT bio FROM creators WHERE user_id = ${userId[0].id}`;
 
     userId[0].bio = bio[0].bio;
-    console.log(userId);
     res.json({
       user: userId,
       campaigns: campaigns,
