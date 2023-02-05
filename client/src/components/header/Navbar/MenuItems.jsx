@@ -1,32 +1,22 @@
 export const MenuItems = [
     {
         title: 'Product',
-        url: '#',
+        url: 'Products',
         cName: 'nav-links'
     },
     {
         title: 'For creators',
-        url: '#',
+        url: 'podcasts',
         cName: 'nav-links'
     },
     {
         title: 'Pricing',
-        url: '#',
+        url: 'pricing',
         cName: 'nav-links'
     },
     {
         title: 'Resources',
-        url: '#',
-        cName: 'nav-links'
-    },
-    {
-        title: 'Log In',
-        url: '#',
-        cName: 'nav-links'
-    },
-    {
-        title: 'Create on Patreon',
-        url: '#',
+        url: 'apps',
         cName: 'nav-links'
     }
 ]
