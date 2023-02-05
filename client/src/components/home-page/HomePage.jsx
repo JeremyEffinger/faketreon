@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./homePage.css";
+import { useRecoilState, useRecoilValue } from "recoil";
+import UrlNameState from "../../UrlNameState";
 
 function HomePage (){
 
-    async function handleClick(){
+
+    const [currentUrl, setCurrentUrl] = useRecoilState(UrlNameState)
+
+
+
+  function handleClick(){
 
         const pathArray = window.location.pathname.split("/");
-        console.log(pathArray)
+        setCurrentUrl(pathArray[1]);
+        useRecoilValue(currentUrl)
 
-    //     useEffect(() => {
-    //     setCurrentUrl(pathArray[1]);
-    //   }, []);
     }
 
     return (
@@ -29,12 +34,12 @@ function HomePage (){
                         </Link>
                     </div>
                     <div>
-                        <Link to="/koboldpress">
+                        <Link to="/koboldpress" onClick={handleClick}>
                             KoboldPress
                         </Link>
                     </div>
                     <div>
-                        <Link to="/something">
+                        <Link to="/something" onClick={handleClick}>
                             Someone Else
                         </Link>
                     </div>

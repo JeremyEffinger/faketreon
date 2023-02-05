@@ -32,7 +32,7 @@ const AboutMe = lazy(() => delayForDemo(import('../AboutMe/AboutMe.jsx')));
       axios
         .get(urlWithProxy + "/creatorcampaign/" + username)
         .then((res) => {
-          console.log(res.data)
+          //console.log(res.data)
           setCreatorInfo(res.data)})
         .catch((err) => {
           err;
@@ -40,11 +40,6 @@ const AboutMe = lazy(() => delayForDemo(import('../AboutMe/AboutMe.jsx')));
     }
     getCreatorPageData();
   }, [username]);
-
-  //console.log("creator info:", creatorInfo.user[0].id);
-  //console.log("URL", useRecoilValue(UrlNameState))
-
-
 
 
 
