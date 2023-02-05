@@ -3,8 +3,6 @@ import "./loading.css"
 function Loading(){
     return (
         <div>
-            <br />
-            <br />
         <h1>
             Loading...
         </h1>
