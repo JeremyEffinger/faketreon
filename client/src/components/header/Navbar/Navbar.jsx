@@ -18,7 +18,7 @@ const Navbar = () => {
 
       </h1>
 
-      <div className='menu-icon'></div>
+      <div className='menu-icon'>
 
       <ul className='nav-menu'>
         {MenuItems.map((item, index) => {
@@ -31,6 +31,7 @@ const Navbar = () => {
           )
         })}
       </ul>
+    </div>
     </nav>
 
     <Outlet />
