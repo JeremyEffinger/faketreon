@@ -1,14 +1,14 @@
 .banner{
-  width: 100vw;
+  display: grid;
+  width: 100%;
   height: auto;
-  position: relative;
-  left: -10%;
   overflow-x: hidden;
+  background-size: cover;
 }
 
 .banner__img{
-  height: auto; 
-  max-width: min-content;   
+  height: auto;
+  width: 100%;
 }
 
 /* Media Queries */

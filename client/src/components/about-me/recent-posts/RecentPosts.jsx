@@ -2,6 +2,7 @@ import React from "react";
 import CreatorInfoState from "../../../CreatorInfoState";
 import { useRecoilValue } from "recoil";
 import Card from "./Cards/Card.jsx";
+import "./recentposts.css"
 
 function RecentPosts(props) {
   const text = useRecoilValue(CreatorInfoState);
