@@ -10,6 +10,18 @@ import { Carousel } from "./Carousel.jsx";
 
 function HomePage (props){
 
+    const [currentUrl, setCurrentUrl] = useRecoilState(UrlNameState)
+
+
+
+  function handleClick(){
+
+        const pathArray = window.location.pathname.split("/");
+        setCurrentUrl(pathArray[1]);
+        useRecoilValue(currentUrl)
+
+    }
+
     const urlWithProxy = "/api/v1";
     const [username, setUserName] = ([]);
   
@@ -39,10 +51,29 @@ function HomePage (props){
                 </div>
             </a>
         </div>
+            Creativity inspired by Money
+            <Link to="/posts">
+                <button>Posts</button>
+            </Link>
 
-        <Carousel username={username} />
-
-    </div>
+            <div className="carousel">
+                <div>
+                    <Link to="/trashtaste" onClick={handleClick}>
+                        TrashTaste
+                    </Link>
+                </div>
+                <div>
+                    <Link to="/koboldpress" onClick={handleClick}>
+                        KoboldPress
+                    </Link>
+                </div>
+                <div>
+                    <Link to="/something" onClick={handleClick}>
+                        Someone Else
+                    </Link>
+                </div>
+            </div>
+        </div>
     )
 
 
