@@ -1,9 +1,8 @@
 import { sql } from "./dbController.js"; //import database configs from dbController
 
 const getAllUsers = (req, res, next) => {
-  sql`SELECT * FROM users`
+  sql`SELECT id, email, name, avatar, created_at, updated_at FROM users`
     .then((users) => {
-      console.log("users", users);
       res.json(users);
     })
     .catch(next);
@@ -11,7 +10,7 @@ const getAllUsers = (req, res, next) => {
 
 const getUserById = (req, res, next) => {
   let id = req.params.id;
-  sql`SELECT * FROM users WHERE id=${id}`
+  sql`SELECT email, name, avatar, created_at, updated_at FROM users WHERE id=${id}`
     .then((user) => {
       if (user.length === 0) {
         res.set("Content-Type", "text/plain");
