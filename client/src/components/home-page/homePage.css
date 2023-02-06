@@ -1,9 +1,14 @@
 
 
 .homePage{
-    display: flex;
+    display: grid;
     height: 100vh;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+}
+
+.carousel{
+    display: grid;
+
 }

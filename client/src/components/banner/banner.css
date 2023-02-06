@@ -1,10 +1,14 @@
 .banner{
-  padding:0 20px;
+  width: 100vw;
+  height: auto;
+  position: relative;
+  left: -10%;
+  overflow-x: hidden;
 }
+
 .banner__img{
-  margin:0 auto;
-  height: 250px; 
-  width: 1200px;   
+  height: auto; 
+  max-width: min-content;   
 }
 
 /* Media Queries */
