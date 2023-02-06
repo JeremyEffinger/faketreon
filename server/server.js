@@ -16,6 +16,7 @@ server.use("/static", express.static("server/public"));
 
 //api routes
 server.get("/api/v1", (req, res) => {
+  res.status(200);
   res.json({ message: "Hello!" });
 });
 
@@ -49,7 +50,8 @@ server.use("/", express.static("dist"));
 //server.get("*", (req, res, next) => {} )
 
 server.use((req, res, next) => {
-  res.contentType("text/plain").status(404).send("Not Found");
+  res.status(404);
+  res.send({ message: "Not Found" });
 });
 
 server.use((err, req, res, next) => {
