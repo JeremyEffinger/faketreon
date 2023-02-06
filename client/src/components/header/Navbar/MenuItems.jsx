@@ -18,5 +18,15 @@ export const MenuItems = [
         title: 'Resources',
         url: 'apps',
         cName: 'nav-links'
+    },
+    {
+        title: 'Log In',
+        url: 'Log In',
+        cName: 'nav-links'
+    },
+    {
+        title: 'Create on Patreon',
+        url: 'Sign Up',
+        cName: 'nav-links'
     }
 ]
