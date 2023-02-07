@@ -1,52 +1,57 @@
-
-
-.homePage{
-    display: grid;
-    height: 100vh;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
+.homePage {
+  display: grid;
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
-.header{
-    display: flex;
-    flex-flow: column wrap;
-    height: unset;
-    width: calc(100% + 1rem);
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  height: unset;
+  width: calc(100% + 1rem);
 }
 .Membership {
-    position: absolute;
-    top: 15%;
-    left: 35%;
+  position: absolute;
+  top: 15%;
+  left: 35%;
 }
 
 .Button {
-    -webkit-box-align: center;
-    align-items: center;
-    backface-visibility: hidden;
-    background-color: rgb(255, 66, 77);
-    border-radius: 9999px;
-    border: 1px solid rgb(255, 66, 77);
-    box-sizing: border-box;
-    cursor: pointer;
-    display: inline-flex;
-    font-weight: 500;
-    height: unset;
-    -webkit-box-pack: center;
-    justify-content: center;
-    padding: 0.78125rem 1.5rem;
-    position: relative;
-    pointer-events: unset;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-    user-select: none;
-    white-space: unset;
-    width: unset;
-    color: rgb(255, 255, 255) !important;
-    font-size: 1rem !important;
-    position: absolute;
-    top: 25%;
-    left: 45%;
+  -webkit-box-align: center;
+  align-items: center;
+  backface-visibility: hidden;
+  background-color: rgb(255, 66, 77);
+  border-radius: 9999px;
+  border: 1px solid rgb(255, 66, 77);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 500;
+  height: unset;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 0.78125rem 1.5rem;
+  position: relative;
+  pointer-events: unset;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  user-select: none;
+  white-space: unset;
+  width: unset;
+  color: rgb(255, 255, 255) !important;
+  font-size: 1rem !important;
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+.CarouselContainer {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 190px;
+  list-style: none;
+  margin: 0;
 }

@@ -1,0 +1,23 @@
+/* .carousel {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 190px;
+  list-style: none;
+  margin: 0;
+} */
+
+.photo {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  /* border-radius: 100%; */
+  border-style: solid;
+  border-color: blueviolet;
+}
+
+.photo:hover {
+  background-color: #b9befa;
+  border-radius: 40px;
+  transition: all 0s ease-out;
+  cursor: pointer;
+}

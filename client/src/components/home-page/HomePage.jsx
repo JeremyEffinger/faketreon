@@ -45,7 +45,18 @@ function HomePage(props) {
               <div className="getStarted">Get Started</div>
             </a>
           </div>
-          <Carousel username={username} />
+          <div className="CarouselContainer">
+            {username.map((user, index) => {
+              return (
+                <Carousel
+                  username={"/" + user.name}
+                  index={index}
+                  user={user}
+                  key={index}
+                />
+              );
+            })}
+          </div>
         </div>
       </Suspense>
     );
