@@ -1,6 +1,6 @@
 import React from "react";
-import "./Carousel.css";
 import { Outlet, Link } from "react-router-dom";
+import "./carousel.css";
 
 export const Carousel = (props) => {
   return (
