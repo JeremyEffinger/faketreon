@@ -13,11 +13,6 @@ import UrlNameState from "../../UrlNameState.jsx";
 const Campaign = (props) => {
   const [currentUrl, setCurrentUrl] = useRecoilState(UrlNameState);
 
-  const pathArray = window.location.pathname.split("/");
-  useEffect(() => {
-    setCurrentUrl(pathArray[1]);
-  }, []);
-
   const Avatar = lazy(() =>
     delayForDemo(import("../../components/avatar/Avatar.jsx"))
   );
@@ -36,6 +31,8 @@ const Campaign = (props) => {
   let username = useRecoilValue(UrlNameState);
 
   useEffect(() => {
+    const pathArray = window.location.pathname.split("/");
+    setCurrentUrl(pathArray[1]);
     function getCreatorPageData() {
       axios
         .get(urlWithProxy + "/creatorcampaign/" + username)
