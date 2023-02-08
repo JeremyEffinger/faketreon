@@ -31,15 +31,17 @@ Faketreon is a platform for supporting creatives through donations - meant to ap
 
 ## Packages and Tools Used
 
-   React
-   Express
-   PostgreSQL
-   Axios
-   Cors
-   Dotenv
-   Jest
-   Babel
-   SCSS
+   - React
+   - React Router
+   - Recoil
+   - Express
+   - PostgreSQL
+   - Axios
+   - Cors
+   - Dotenv
+   - Jest
+   - Babel
+   - SCSS
 
 ## Contributions
 
