@@ -26,7 +26,10 @@ Faketreon is a platform for supporting creatives through donations - meant to ap
    ```bash
    FAKETREON_DB_URL=<DB_URL>
    Run the migrations file: psql -f migrations.pgsql
-   Start the development server: yarn run dev
+   ```
+   Start the development server:
+   ```bash
+   yarn run dev
    ```
 
 ## Packages and Tools Used
