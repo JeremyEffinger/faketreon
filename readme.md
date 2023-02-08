@@ -42,6 +42,7 @@ Faketreon is a platform for supporting creatives through donations - meant to ap
    - Jest
    - Babel
    - SCSS
+   - Vite
 
 ## Contributions
 
